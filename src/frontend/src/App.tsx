@@ -37,6 +37,7 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { useActor } from "./hooks/useActor";
+import AdminPage from "./pages/AdminPage";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface ServiceItem {
@@ -1777,6 +1778,10 @@ function Footer() {
 
 // ─── App ──────────────────────────────────────────────────────────────────────
 export default function App() {
+  if (window.location.pathname === "/admin") {
+    return <AdminPage />;
+  }
+
   return (
     <div className="min-h-screen">
       <Navbar />
